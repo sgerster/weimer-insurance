@@ -1,44 +1,12 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Weimer Insurance | Home, Auto, Life & Commercial Policies in Ohio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload homepage">
-		<div id="page-wrapper">
+<?php 
 
-			<!-- Header -->
-				<div id="header-wrapper">
-					<header id="header" class="container">
+$page = 'home';
+$pageTitle	= 'Weimer Insurance | HOME';
+$description = 'Home, auto, life and commercial insurance policies. Location in Ohio.'; 
 
-						<!-- Logo -->
-							<div id="logo">
-								<a href="index.html"><img src="assets/images/Weimer-Logo_Crest.png" alt="Weimer Insurance" width="100px"/></a>
-							</div>
+include 'components/header.php'; 
 
-						<!-- Nav -->
-							<nav id="nav">
-								<ul>
-									<li class="current"><a href="index.html">Home</a></li>
-									<li>
-										<a href="#">Services <i class="fa fa-arrow-down"></i></a>
-										<ul>
-											<li><a href="home-insurance.html">Home/Rental</a></li>
-											<li><a href="auto-insurance.html">Auto</a></li>
-											<li><a href="life-insurance.html">Life</a></li>
-											<li><a href="commercial-insurance.html">Commercial</a></li>
-										</ul>
-									</li>
-									<li><a href="partners.html">Partners</a></li>
-									<li><a href="get-a-quote.html">Get a Quote</a></li>
-									<li><a href="contact.html">Contact</a></li>
-								</ul>
-							</nav>
-
-					</header>
-				</div>
+?>
 
 			<!-- Banner -->
 				<div id="banner-wrapper">
@@ -140,75 +108,4 @@
 					</div>
 				</div>
 
-			<!-- Footer -->
-				<div id="footer-wrapper">
-					<footer id="footer" class="container">
-						<div class="row aln-top">
-							<div class="col-3 col-6-medium col-12-small">
-
-								<!-- Links -->
-									<section class="widget links">
-										<img src="assets/images/Weimer-Logo_Crest.png" width="150px">
-									</section>
-
-							</div>
-							<div class="col-3 col-6-medium col-12-small">
-
-								<!-- Links -->
-									<section class="widget links">
-										<h3>Connect on Social</h3>
-										<a href="https://www.facebook.com/WeimerInsurance/" target="_blank" class="icon brands fa-facebook-f"></a>
-										<a href="https://www.linkedin.com/in/ricky-weimer-648b50176/" target="_blank" class="icon brands fa-linkedin"></a>
-									</section>
-
-							</div>
-							<div class="col-3 col-6-medium col-12-small">
-
-								<!-- Links -->
-									<section class="widget links">
-										<h3>Links</h3>
-										<ul class="style2">
-											<li><a href="home-insurance.html">Home Insurance</a></li>
-											<li><a href="auto-insurance.html">Auto Insurance</a></li>
-											<li><a href="life-insurance.html">Life Insurance</a></li>
-											<li><a href="commercial-insurance.html">Commercial Insurance</a></li>
-											<li><a href="get-a-quote.html">Get a Quote</a></li>
-											<li><a href="assets/WeimerInsPrivacyPolicy.pdf" target="_blank">Privacy Policy</a></li>
-										</ul>
-									</section>
-
-							</div>
-							<div class="col-3 col-6-medium col-12-small">
-
-								<!-- Contact -->
-									<section class="widget contact last">
-										<h3>Contact Us</h3>
-										<p>
-										<a href="mailto:ricky@weimerinsurance.com" class="icon contact-us fa-envelope"> Email Us</a><br/>
-										<a href="" class="icon contact-us fa-comment-dots"> Text Us</a><br/>
-										3455 Lenox Ave<br />
-										Youngstown, OH 44502<br />
-										(330) 301-0262</p>
-									</section>
-
-							</div>
-						</div>
-							<div id="copyright">
-								<p>&copy; 2024 Weimer Insruance LLC. All rights reserved</p>
-							</div>
-					</footer>
-				</div>
-
-			</div>
-
-		<!-- Scripts -->
-
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
-</html>
+<?php include 'components/footer.php'; ?>

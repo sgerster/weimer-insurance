@@ -52,7 +52,7 @@ include 'components/header.php';
 				<div id="features-wrapper">
 					<div class="container">
 						<div class="row aln-top">
-							<div class="col-3 col-6-medium">
+							<div class="col-3 col-6-medium col-12-small">
 
 								<!-- Box -->
 									<section class="box feature">
@@ -65,7 +65,7 @@ include 'components/header.php';
 									</section>
 
 							</div>
-							<div class="col-3 col-6-medium">
+							<div class="col-3 col-6-medium col-12-small">
 
 								<!-- Box -->
 									<section class="box feature">
@@ -78,7 +78,7 @@ include 'components/header.php';
 									</section>
 
 							</div>
-							<div class="col-3 col-6-medium">
+							<div class="col-3 col-6-medium col-12-small">
 
 								<!-- Box -->
 									<section class="box feature">
@@ -91,7 +91,7 @@ include 'components/header.php';
 									</section>
 
 							</div>
-							<div class="col-3 col-6-medium">
+							<div class="col-3 col-6-medium col-12-small">
 
 								<!-- Box -->
 									<section class="box feature">
@@ -109,3 +109,4 @@ include 'components/header.php';
 				</div>
 
 <?php include 'components/footer.php'; ?>
+			

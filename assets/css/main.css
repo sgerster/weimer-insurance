@@ -104,14 +104,13 @@ input, select, textarea {
 		text-align: center;
 	}
 	iframe {
-		width: 700px;
-		height: 700px;
-		overflow: auto;
-		margin-left: -40px;
+		width: 90%;
+		aspect-ratio: 1/1;
+		overflow: hidden;
 	}
 	iframe.map {
-		width: 550px;
-		height: 450px;
+		width: 100%;
+		aspect-ratio: 1/1;
 		margin: 0 auto;
 		border-radius: 10px;
 	}

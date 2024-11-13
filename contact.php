@@ -4,6 +4,53 @@ $page = 'contact';
 $pageTitle	= 'Weimer Insurance | CONTACT US';
 $description = 'Contact Weimer Insurance to finalize your insurance needs.'; 
 
+//define email variables
+$name = $email = $phone = $message = "";
+//define error variables
+$nameErr = $emailErr = $phoneErr = $messageErr = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (empty($_POST["name"])) {
+        $nameErr = "Please enter your name";
+    } else {
+        $name = test_input($_POST["name"]);
+        //check name only contains letters and spaces
+        if (!preg_match("/^[a-zA-z-' ]*$/",$name)) {
+            $nameErr = "Only letters and white spaces allowed";
+        }
+    }
+    if (empty($_POST["email"])) {
+        $emailErr = "Enter a valid email";
+    } else {
+        $email = test_input($_POST["email"]);
+        //validate email
+        if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $emailErr = "Invalid email format";
+        }
+    }
+    if (empty($_POST["phone"])) {
+        $phoneErr = "Please enter your phone number";
+    } else {
+        $phone = test_input($_POST["phone"]);
+        //validate phone
+        $phone = preg_replace('\/d/', $phone);
+        if(!preg_match("/^\d{10}$/", $phone)) {
+            $phoneErr = "Please enter a 10 digit phone number";
+        }
+    }
+    if (empty($_POST["message"])) {
+        $messageErr = "Enter your message";
+    } else {
+     $message = test_input($_POST["message"]);
+    }   
+}
+function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
 include 'components/header.php'; 
 
 ?>
@@ -29,15 +76,20 @@ include 'components/header.php';
                                         <div class="col-6 col-6-medium col-12-small">
                                             <h2>Send a message</h2>
                                             <p>Use the form below to email us directly.</p>
-                                            <form method="post">
+                                            <form method="post" name="weimer-contact" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                                                 <label for="name">Name</label>
-                                                <input type="text" name="name"/>
+                                                    <input type="text" name="name"/>
+                                                    <span class="error">* <?php echo $nameErr;?></span>
                                                 <label for="phone">Phone</label>
-                                                <input type="tel" name="phone"/>
+                                                    <input type="tel" name="phone"/>
+                                                    <span class="error">* <?php echo $phoneErr;?></span>
                                                 <label for="email">Email</label>
-                                                <input type="email" name="email"/>
+                                                    <input type="email" name="email"/>
+                                                    <span class="error">* <?php echo $emailErr;?></span>
                                                 <label for="message">Message</label>
-                                                <textarea name="message"></textarea>
+                                                    <textarea name="message"></textarea>
+                                                    <span class="error">* <?php echo $messageErr;?></span>
+                                                <input type="submit" name="submit" value="Submit">
                                             </form>
                                         </div>
 

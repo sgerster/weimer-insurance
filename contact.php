@@ -50,6 +50,12 @@ function test_input($data) {
     $data = htmlspecialchars($data);
     return $data;
 }
+$body = "New message from: " . $name . "\r\n" . 
+        "Email: " . $email . "\r\n" .
+        "Phone: " . $phone . "\r\n" .
+        "Message: " . $message . "";
+
+$success = mail("s.m.gerster@gmail.com", "New Inquiry TEST", $body);
 
 include 'components/header.php'; 
 
@@ -74,23 +80,27 @@ include 'components/header.php';
                                     <div class="row aln-top">
                                     <!-- Content -->
                                         <div class="col-6 col-6-medium col-12-small">
+                                           <?php if(!$success) { ?>
                                             <h2>Send a message</h2>
                                             <p>Use the form below to email us directly.</p>
                                             <form method="post" name="weimer-contact" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                                                 <label for="name">Name</label>
                                                     <input type="text" name="name"/>
-                                                    <span class="error">* <?php echo $nameErr;?></span>
+                                                    <span class="error"> <?php echo $nameErr;?></span>
                                                 <label for="phone">Phone</label>
                                                     <input type="tel" name="phone"/>
-                                                    <span class="error">* <?php echo $phoneErr;?></span>
+                                                    <span class="error"> <?php echo $phoneErr;?></span>
                                                 <label for="email">Email</label>
                                                     <input type="email" name="email"/>
-                                                    <span class="error">* <?php echo $emailErr;?></span>
+                                                    <span class="error"> <?php echo $emailErr;?></span>
                                                 <label for="message">Message</label>
                                                     <textarea name="message"></textarea>
-                                                    <span class="error">* <?php echo $messageErr;?></span>
+                                                    <span class="error"> <?php echo $messageErr;?></span>
                                                 <input type="submit" name="submit" value="Submit">
                                             </form>
+                                            <?php } else { ?>
+                                                <h2>Thanks! your message has been sent.</h2>
+                                                <?php } ?>
                                         </div>
 
                                         <div class="col-6 col-6-medium col-12-small">        
